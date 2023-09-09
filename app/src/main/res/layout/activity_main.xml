@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar_kalkulator"
+        layout="@layout/toolbar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_display_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <TextView
+        android:id="@+id/view_kalkulator"
+        android:layout_width="wrap_content"
+        android:layout_height="85dp"
+        android:fontFamily="@font/poppin_bold"
+        android:includeFontPadding="false"
+        android:text="@string/viewKalkulator"
+        android:textAlignment="center"
+        android:textColor="@color/biru"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_display_end"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_display" />
+
+    <TextView
+        android:id="@+id/view_hasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".5"
+        android:fontFamily="@font/poppin_bold"
+        android:text="@string/viewHasil"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_display_end"
+        app:layout_constraintTop_toBottomOf="@id/view_kalkulator" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <!--Guideline untuk pembatas tombol-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/batas_kiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/batas_kanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/batas_atas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/batas_bawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <!--vertikal kebawah-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_kiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_tengah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_kanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <!--vertikal nyamping-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_atas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_tengah_atas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.79" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/paling_bawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <!--tombol operasi-->
+    <Button
+        android:id="@+id/button_perkalian"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/x"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:background="@drawable/btn_operasi_layout"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_atas"
+        app:layout_constraintEnd_toEndOf="@id/paling_kiri"
+        app:layout_constraintStart_toStartOf="@id/batas_kiri"
+        app:layout_constraintTop_toBottomOf="@id/batas_atas" />
+
+    <Button
+        android:id="@+id/button_pembagian"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/pembagian"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_atas"
+        app:layout_constraintEnd_toEndOf="@id/paling_tengah"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/paling_kiri"
+        app:layout_constraintTop_toBottomOf="@id/batas_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_persen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/persentase"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_atas"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_tengah"
+        app:layout_constraintTop_toBottomOf="@id/batas_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/clear"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_atas"
+        app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kanan"
+        app:layout_constraintTop_toBottomOf="@id/batas_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/delete"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kanan"
+        app:layout_constraintTop_toTopOf="@+id/paling_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_pengurangan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/kurang"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/bawah"
+        app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kanan"
+        app:layout_constraintTop_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_pertambahan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/tambah"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kanan"
+        app:layout_constraintTop_toTopOf="@+id/bawah"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttoon_sama_dengan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
+        android:text="@string/sama_dengan"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/batas_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_tengah"
+        app:layout_constraintTop_toTopOf="@+id/paling_bawah"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!-- tombol angka-angka -->
+
+    <Button
+        android:id="@+id/tujuh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/tujuh"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kiri"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/batas_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/delapan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/delapan"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintEnd_toStartOf="@+id/paling_tengah"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/sembilan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/sembilan"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_tengah"
+        app:layout_constraintTop_toTopOf="@+id/paling_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/enam"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/enam"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_tengah"
+        app:layout_constraintTop_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/lima"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/lima"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_tengah"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/empat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/empat"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kiri"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/batas_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_tengah_atas"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/tiga"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/tiga"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kanan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_tengah"
+        app:layout_constraintTop_toTopOf="@+id/bawah"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/dua"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/dua"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_tengah"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kiri"
+        app:layout_constraintTop_toTopOf="@+id/bawah"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/satu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/satu"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/paling_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kiri"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/batas_kiri"
+        app:layout_constraintTop_toTopOf="@+id/bawah"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/koma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/koma"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/batas_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_kiri"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/batas_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_bawah"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/nol"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_angka_layout"
+        android:text="@string/nol"
+        android:textColor="@color/biru"
+        android:textSize="30sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/batas_bawah"
+        app:layout_constraintEnd_toStartOf="@+id/paling_tengah"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/paling_kiri"
+        app:layout_constraintTop_toTopOf="@+id/paling_bawah"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
