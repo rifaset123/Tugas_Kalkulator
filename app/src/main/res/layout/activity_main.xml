@@ -8,14 +8,16 @@
 
     <include
         android:id="@+id/toolbar_kalkulator"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-36dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.21" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_display_end"
@@ -24,14 +26,18 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.87" />
 
-    <TextView
-        android:id="@+id/view_kalkulator"
+    <EditText
+        android:id="@+id/display"
         android:layout_width="wrap_content"
-        android:layout_height="85dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/poppin_bold"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="none"
         android:includeFontPadding="false"
-        android:text="@string/viewKalkulator"
+        android:hint="@string/nol"
         android:textAlignment="center"
+        android:background="@null"
         android:textColor="@color/biru"
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="@id/guideline_display_end"
@@ -44,9 +50,9 @@
         android:alpha=".5"
         android:fontFamily="@font/poppin_bold"
         android:text="@string/viewHasil"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_display_end"
-        app:layout_constraintTop_toBottomOf="@id/view_kalkulator" />
+        app:layout_constraintTop_toBottomOf="@id/display" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -136,19 +142,22 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <!--tombol operasi-->
+
     <Button
         android:id="@+id/button_perkalian"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/btn_operasi_layout"
         android:text="@string/x"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:background="@drawable/btn_operasi_layout"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/paling_atas"
         app:layout_constraintEnd_toEndOf="@id/paling_kiri"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/batas_kiri"
-        app:layout_constraintTop_toBottomOf="@id/batas_atas" />
+        app:layout_constraintTop_toBottomOf="@id/batas_atas"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_pembagian"
@@ -193,10 +202,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/paling_atas"
         app:layout_constraintEnd_toStartOf="@+id/batas_kanan"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/paling_kanan"
         app:layout_constraintTop_toBottomOf="@id/batas_atas"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_delete"
@@ -275,7 +284,7 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/paling_tengah_atas"
         app:layout_constraintEnd_toStartOf="@+id/paling_kiri"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/batas_kiri"
         app:layout_constraintTop_toTopOf="@+id/paling_atas"
         app:layout_constraintVertical_bias="1.0" />
